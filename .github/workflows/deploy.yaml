@@ -20,7 +20,7 @@ jobs:
             tree
 
             ## only needs to clone the HEAD
-            git clone --depth 1 https://github.com/motetpaper/pwa-motet-clock output
+            git clone --depth 1 https://github.com/motetpaper/pwa-motet-hexrgb output
             
             pwd
             tree
