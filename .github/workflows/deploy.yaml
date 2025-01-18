@@ -1,6 +1,6 @@
 # deploy.yaml
 
-name: deploy-motet-clock
+name: deploy-pwa
 
 on: 
   workflow_dispatch:
@@ -14,30 +14,23 @@ jobs:
           with:
             path: gh-pages
             
-        - name: get the latest pwa-motet-clock
+        - name: get the latest pwa
           run: |
             pwd
             tree
 
             ## only needs to clone the HEAD
-            git clone --depth 1 https://github.com/motetpaper/pwa-motet-clock
+            git clone --depth 1 https://github.com/motetpaper/pwa-motet-clock output
             
             pwd
             tree
             ls -ra
-        - name: copy web files
-          run: |
-            rm ./pwa-motet-clock/README.md
-            rm ./pwa-motet-clock/LICENSE*
-
-            pwd
-            tree
-            
+          
         - name: Upload static files as artifact
           id: deployment
           uses: actions/upload-pages-artifact@v3
           with:
-            path: pwa-motet-clock/
+            path: output/
   deploy:
     needs: build
 
@@ -55,4 +48,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          folder: pwa-motet-clock/
+          folder: output/
