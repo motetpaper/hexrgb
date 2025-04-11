@@ -1,1 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css"/>
+  <link rel="manifest" href="./manifest.json"/>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico"/>
+  <title>MOTETPAPER/HEXRGB</title>
+</head>
+<body>
+<div id="wrap">
+<input tabindex="1" type="text" maxlength="3" id="rbox"><input tabindex="-1" type="range" id="r" min="0" step="1" max="255"><br/>
+<input tabindex="2" type="text" maxlength="3" id="gbox"><input tabindex="-1" type="range" id="g" min="0" step="1" max="255"><br/>
+<input tabindex="3" type="text" maxlength="3" id="bbox"><input tabindex="-1" type="range" id="b" min="0" step="1" max="255"><br/>
+<div id="hexwrap"><span>#</span><span maxlength="6" id="hexpad"></span><div id="colorpanel"><input tabindex="4" id="colorpicker" type="color"></div></div>
+</div>
 
+<div id="footer">
+<!--<button tabindex="5" popovertarget="settings">settings</button><br/>-->
+HEXRGB v0.5.3<br/>
+<a href="https://motetpaper.github.io/">MOTETPAPER</a> &copy; 2025
+</div>
+
+
+<div id="settings" class="popover" popover>
+  <h4>Settings<hr></h4>
+
+  No settings yet. Please check back soon.
+  <p>
+    <button tabindex="-1" popovertarget="settings">OK</button>
+  </p>
+</div>
+
+<script defer src="./app.js"></script>
+</body>
+</html>
